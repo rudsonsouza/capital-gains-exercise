@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cgc.console", "src\cgc.console\cgc.console.csproj", "{4A5629AC-BA21-4822-B06E-5A234BC002B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cgc.core", "src\cgc.core\cgc.core.csproj", "{23ADB3DE-9091-494F-B6AB-B0ADC39183D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D2939424-116B-49A8-9B44-F4DAFE5B9D7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A7232B3D-7860-4E5C-B215-9F97188192EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cgc.tests", "tests\cgc.tests\cgc.tests.csproj", "{8019C1D4-7FE2-4D5C-84C1-8EF8D2C6ABDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A5629AC-BA21-4822-B06E-5A234BC002B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5629AC-BA21-4822-B06E-5A234BC002B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5629AC-BA21-4822-B06E-5A234BC002B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5629AC-BA21-4822-B06E-5A234BC002B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23ADB3DE-9091-494F-B6AB-B0ADC39183D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23ADB3DE-9091-494F-B6AB-B0ADC39183D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23ADB3DE-9091-494F-B6AB-B0ADC39183D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23ADB3DE-9091-494F-B6AB-B0ADC39183D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8019C1D4-7FE2-4D5C-84C1-8EF8D2C6ABDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8019C1D4-7FE2-4D5C-84C1-8EF8D2C6ABDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8019C1D4-7FE2-4D5C-84C1-8EF8D2C6ABDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8019C1D4-7FE2-4D5C-84C1-8EF8D2C6ABDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4A5629AC-BA21-4822-B06E-5A234BC002B4} = {D2939424-116B-49A8-9B44-F4DAFE5B9D7B}
+		{23ADB3DE-9091-494F-B6AB-B0ADC39183D6} = {D2939424-116B-49A8-9B44-F4DAFE5B9D7B}
+		{8019C1D4-7FE2-4D5C-84C1-8EF8D2C6ABDF} = {A7232B3D-7860-4E5C-B215-9F97188192EF}
+	EndGlobalSection
+EndGlobal
