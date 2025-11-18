@@ -24,15 +24,23 @@ void ProcessPayload(string payload)
         return;
     }
 
-    var transactions = JsonSerializer.Deserialize<List<Transaction>>(payload);
-    if (transactions == null || transactions.Count == 0)
+    try
     {
-        return;
+        var transactions = JsonSerializer.Deserialize<List<Transaction>>(payload);
+        if (transactions == null || transactions.Count == 0)
+        {
+            return;
+        }
+
+        var calculator = new CapitalGainsCalculator();
+        var results = transactions.Select(calculator.ProcessTransaction).ToList();
+
+        var output = JsonSerializer.Serialize(results, jsonOptions);
+        Console.WriteLine(output);
     }
-
-    var calculator = new CapitalGainsCalculator();
-    var results = transactions.Select(calculator.ProcessTransaction).ToList();
-
-    var output = JsonSerializer.Serialize(results, jsonOptions);
-    Console.WriteLine(output);
+    catch (JsonException ex)
+    {
+        Console.Error.WriteLine($"Erro ao processar JSON: {ex.Message}");
+        Console.Error.WriteLine($"Payload recebido: {payload}");
+    }
 }
