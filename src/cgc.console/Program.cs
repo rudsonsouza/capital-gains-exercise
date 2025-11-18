@@ -9,18 +9,25 @@ var jsonOptions = new JsonSerializerOptions
     DefaultIgnoreCondition = JsonIgnoreCondition.Never
 };
 
-string? line;
-while ((line = Console.ReadLine()) != null)
+if (args.Length > 0)
 {
-    if (string.IsNullOrWhiteSpace(line))
+    foreach (var argument in args)
     {
-        break;
+        ProcessPayload(argument);
+    }
+}
+
+void ProcessPayload(string payload)
+{
+    if (string.IsNullOrWhiteSpace(payload))
+    {
+        return;
     }
 
-    var transactions = JsonSerializer.Deserialize<List<Transaction>>(line);
+    var transactions = JsonSerializer.Deserialize<List<Transaction>>(payload);
     if (transactions == null || transactions.Count == 0)
     {
-        continue;
+        return;
     }
 
     var calculator = new CapitalGainsCalculator();

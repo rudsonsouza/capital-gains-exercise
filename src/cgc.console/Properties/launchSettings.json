@@ -2,7 +2,7 @@
   "profiles": {
     "cgc.console": {
       "commandName": "Project",
-      "commandLineArgs": "[{\"operation\":\"buy\", \"unit-cost\":10.00, \"quantity\": 10000},\r\n{\"operation\":\"sell\", \"unit-cost\":20.00, \"quantity\": 5000}]\r\n[{\"operation\":\"buy\", \"unit-cost\":20.00, \"quantity\": 10000},\r\n{\"operation\":\"sell\", \"unit-cost\":10.00, \"quantity\": 5000}]"
+      "commandLineArgs": "[{\"operation\":\"buy\",\"unit-cost\":10.00,\"quantity\":10000},{\"operation\":\"sell\",\"unit-cost\":20.00,\"quantity\":5000}] [{\"operation\":\"buy\",\"unit-cost\":20.00,\"quantity\":10000},{\"operation\":\"sell\",\"unit-cost\":10.00,\"quantity\":5000}]"
     }
   }
 }
