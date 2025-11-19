@@ -24,18 +24,25 @@ O projeto segue uma arquitetura em camadas com separação clara de responsabili
 ```
 cgc/
 ├── src/
-│   ├── cgc.core/              # Camada de domínio/lógica de negócio
+│   ├── cgc.core/                            # Camada de domínio/lógica de negócio
+|   |   └── Application/ 
+|   |       ├── CapitalGainsCalculator.cs    # Lógica principal de cálculo
 │   │   └── Entities/
-│   │       ├── CapitalGainsCalculator.cs    # Lógica principal de cálculo
-│   │       ├── Transaction.cs               # Entidade de transação
+│   │       ├── CalculatorState.cs           # Entidade de armazenamento de estado
 │   │       ├── TaxResult.cs                 # Resultado do cálculo de imposto
-│   │       └── DecimalJsonConverter.cs      # Conversor JSON para decimais
-│   └── cgc.console/           # Aplicação de linha de comando
-│       └── Program.cs         # Ponto de entrada da aplicação
+│   │       ├── Transaction.cs               # Entidade de transação
+│   │   └── Factory/
+│   │       ├── TransactionFactory.cs        # Entidade concreta de criação
+│   │   └── Interfaces/
+│   │       ├── ITransactionStrategy.cs      # Interface de transação
+│   │   └── Services/
+│   │       ├── BuyTransactionStrategy.cs    # Processamento de compra
+│   │       ├── SellTransactionStrategy.cs   # Processamento de venda
+│   └── cgc.console/                         # Aplicação de linha de comando
+│       └── Program.cs                       # Ponto de entrada da aplicação
 └── tests/
-    └── cgc.tests/             # Testes unitários e de integração
-        ├── CapitalGainsCalculatorTests.cs
-        └── IntegrationTests.cs
+    └── cgc.tests/                           # Testes unitários e de integração
+        └── CaseTests.cs
 ```
 
 ## Decisões Técnicas e Arquiteturais
