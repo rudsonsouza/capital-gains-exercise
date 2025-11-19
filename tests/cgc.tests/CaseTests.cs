@@ -20,7 +20,7 @@ public class CaseTests
     }
     
     [Fact]
-    public void Case1_AllSalesUnderThreshold_NoTax()
+    public void Case1_AllSales_NoTax()
     {
         var transactions = new List<Transaction>
         {
@@ -38,7 +38,7 @@ public class CaseTests
     }
 
     [Fact]
-    public void Case2_ProfitAndLoss_CorrectTaxCalculation()
+    public void Case2_ProfitAndLoss_TaxCalculation()
     {
         var transactions = new List<Transaction>
         {
@@ -56,7 +56,7 @@ public class CaseTests
     }
 
     [Fact]
-    public void Case3_LossCarryForward_OffsetsProfit()
+    public void Case3_Loss_OffsetsProfit()
     {
         var transactions = new List<Transaction>
         {
@@ -74,7 +74,7 @@ public class CaseTests
     }
 
     [Fact]
-    public void Case4_MultipleBuys_WeightedAverageCalculation()
+    public void Case4_MultipleBuys_AverageCalculation()
     {
         var transactions = new List<Transaction>
         {
@@ -92,7 +92,7 @@ public class CaseTests
     }
 
     [Fact]
-    public void Case5_BreakEvenSale_MaintainsWeightedAverage()
+    public void Case5_MaintainsdAverage()
     {
         var transactions = new List<Transaction>
         {
@@ -112,7 +112,7 @@ public class CaseTests
     }
 
     [Fact]
-    public void Case6_ComplexLossCarryForward_MultipleOperations()
+    public void Case6_LossCarry_MultipleOperations()
     {
         var transactions = new List<Transaction>
         {
@@ -134,7 +134,7 @@ public class CaseTests
     }
 
     [Fact]
-    public void Case7_NewBuyAfterSellAll_ResetsWeightedAverage()
+    public void Case7_NewBuy_ResetsdAverage()
     {
         var transactions = new List<Transaction>
         {
@@ -164,7 +164,7 @@ public class CaseTests
     }
 
     [Fact]
-    public void Case8_CompleteSellAndNewBuy_IndependentCalculations()
+    public void Case8_SellAndBuy_Calculations()
     {
         var transactions = new List<Transaction>
         {
@@ -184,7 +184,7 @@ public class CaseTests
     }
 
     [Fact]
-    public void Case9_SaleAtThreshold_DoesNotConsumeLoss()
+    public void Case9_Sale_DoesNotLoss()
     {
         var transactions = new List<Transaction>
         {

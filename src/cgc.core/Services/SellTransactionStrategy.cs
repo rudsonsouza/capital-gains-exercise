@@ -5,13 +5,13 @@ namespace cgc.core.Services;
 
 public class SellTransactionStrategy : ITransactionStrategy
 {
-    private const decimal TaxRate = 0.20m;
-    private const decimal ExemptionValue = 20000m;
-    private const int DecimalPlaces = 2;
+    private const decimal taxRate = 0.20m;
+    private const decimal taxValue = 20000m;
+    private const int decimalPlaces = 2;
 
     public TaxResult Process(Transaction transaction, CalculatorState state)
     {
-        decimal grossSaleValue = transaction.UnitCost * transaction.Quantity;
+        decimal saleValue = transaction.UnitCost * transaction.Quantity;
         decimal profit = (transaction.UnitCost - state.AverageCost) * transaction.Quantity;
         
         state.CurrentPosition -= transaction.Quantity;
@@ -21,7 +21,7 @@ public class SellTransactionStrategy : ITransactionStrategy
             state.AverageCost = 0m;
         }
         
-        if (grossSaleValue <= ExemptionValue)
+        if (saleValue <= taxValue)
         {
             if (profit < 0)
             {
@@ -52,7 +52,7 @@ public class SellTransactionStrategy : ITransactionStrategy
             }
         }
         
-        decimal tax = Math.Round(taxableProfit * TaxRate, DecimalPlaces);
+        decimal tax = Math.Round(taxableProfit * taxRate, decimalPlaces);
         return new TaxResult { Tax = tax };
     }
 }
