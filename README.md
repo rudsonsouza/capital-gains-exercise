@@ -114,18 +114,6 @@ cat <<EOF | dotnet run --project src/cgc.console/cgc.console.csproj
 EOF
 ```
 
-### Exemplo de Saída
-
-Para a entrada:
-```json
-[{"operation":"buy","unit-cost":10.00,"quantity":10000},{"operation":"sell","unit-cost":20.00,"quantity":5000}]
-```
-
-A saída será:
-```json
-[{"tax":0.0},{"tax":10000.0}]
-```
-
 ## Como Executar os Testes
 
 ### Executar Todos os Testes
