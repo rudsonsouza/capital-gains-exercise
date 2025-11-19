@@ -138,16 +138,7 @@ dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
 O projeto inclui testes que cobrem:
 
-1. **Testes Unitários** (`CapitalGainsCalculatorTests.cs`):
-   - Processamento de compras
-   - Processamento de vendas
-   - Cálculo de média ponderada
-   - Acúmulo de prejuízos
-   - Dedução de prejuízos de lucros futuros
-   - Regra de isenção (valor ≤ R$ 20.000)
-   - Reset de estado
-
-2. **Testes de Integração** (`IntegrationTests.cs`):
+1. **Testes de Integração** (`CaseTests.cs`):
    - Todos os casos de teste fornecidos na especificação (Casos #1 a #9)
    - Validação end-to-end desde a entrada JSON até a saída JSON
 
@@ -159,8 +150,6 @@ O projeto utiliza apenas bibliotecas padrão do .NET e as seguintes dependência
 - **xUnit**: Framework de testes (apenas para projeto de testes)
 - **Microsoft.NET.Test.Sdk**: SDK de testes (apenas para projeto de testes)
 
-Não foram utilizados frameworks ou bibliotecas externas desnecessárias, mantendo a solução simples e direta.
-
 ## Notas Adicionais
 
 ### Validação de Entrada
@@ -169,15 +158,7 @@ Conforme especificado, assume-se que a entrada JSON está sempre bem formatada e
 
 ### Performance
 
-A aplicação processa transações sequencialmente em memória, sem necessidade de banco de dados ou persistência. Isso garante alto desempenho para o propósito do desafio.
-
-### Extensibilidade
-
-A estrutura do código permite fácil extensão para:
-- Novos tipos de operações
-- Diferentes regras de cálculo de imposto
-- Múltiplas moedas
-- Persistência de histórico (se necessário no futuro)
+A aplicação processa transações sequencialmente em memória, sem necessidade de banco de dados ou persistência.
 
 ### Tratamento de Erros
 
