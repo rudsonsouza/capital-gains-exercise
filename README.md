@@ -58,15 +58,11 @@ O projeto está dividido em duas camadas principais:
 
 - **decimal**: Utilizado para todos os cálculos monetários para garantir precisão e evitar problemas de arredondamento com tipos ponto flutuante.
 
-### 3. Conversor JSON Customizado
-
-Foi implementado um `DecimalJsonConverter` para garantir que os valores decimais sejam formatados corretamente na saída JSON, removendo zeros à direita quando apropriado.
-
-### 4. Tratamento de Estado
+### 3. Tratamento de Estado
 
 O estado da aplicação (posição atual, média ponderada, prejuízos acumulados) é gerenciado em memória pela classe `CapitalGainsCalculator`. Cada linha de entrada representa uma simulação independente, garantindo que o estado não seja compartilhado entre diferentes execuções.
 
-### 5. Testes
+### 4. Testes
 
 O projeto inclui testes unitários para validar a lógica de negócio e testes de integração que validam todos os casos de teste fornecidos na especificação, garantindo que a aplicação funciona corretamente de ponta a ponta.
 
